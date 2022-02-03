@@ -1,4 +1,4 @@
-package cd.personal.Pantry;
+package cd.personal.Pantry.core;
 
 import cd.personal.Pantry.dm.Ingredient;
 import org.springframework.data.repository.CrudRepository;

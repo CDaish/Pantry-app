@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Ingredient {
+public class Recipe {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,14 +14,14 @@ public class Ingredient {
     private final String name;
     private final String description;
 
-    public Ingredient(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Recipe() {
+        description = "";
+        name = "";
     }
 
-    public Ingredient() {
-        description = null;
-        name = "";
+    public Recipe(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     public String getName() {
@@ -32,13 +32,5 @@ public class Ingredient {
         return description;
     }
 
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
 
 }

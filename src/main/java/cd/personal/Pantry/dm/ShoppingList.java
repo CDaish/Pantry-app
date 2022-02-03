@@ -6,23 +6,13 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Ingredient {
+public class ShoppingList {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private final String name;
     private final String description;
-
-    public Ingredient(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public Ingredient() {
-        description = null;
-        name = "";
-    }
 
     public String getName() {
         return name;
@@ -32,13 +22,15 @@ public class Ingredient {
         return description;
     }
 
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
+    public ShoppingList() {
+        description = "";
+        name = "";
     }
+
+    public ShoppingList(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
 
 }
