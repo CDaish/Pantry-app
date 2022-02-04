@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-public class Ingredient {
+public class Unit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,14 +17,14 @@ public class Ingredient {
     private final String name;
     private final String description;
 
-    public Ingredient(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Unit() {
+        description = "";
+        name = "";
     }
 
-    public Ingredient() {
-        description = null;
-        name = "";
+    public Unit(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
     public String getName() {
@@ -34,14 +34,4 @@ public class Ingredient {
     public String getDescription() {
         return description;
     }
-
-    @Override
-    public String toString() {
-        return "Ingredient{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
-
 }
