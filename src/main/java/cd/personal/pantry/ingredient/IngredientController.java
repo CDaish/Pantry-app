@@ -31,11 +31,11 @@ public class IngredientController extends BaseController {
 
     @PatchMapping("/ingredients")
     public ResponseEntity<String> updateIngredient(@Valid @RequestBody Ingredient ingredient) {
-        Optional<Ingredient> toUpdate = ingredientRepository.findById(ingredient.getId());
-        if (toUpdate.isPresent()) {
-            Ingredient i = toUpdate.get();
-            i.setAmount(ingredient.getAmount());
-            ingredientRepository.save(i);
+        Optional<Ingredient> optionalIngredient = ingredientRepository.findById(ingredient.getId());
+        if (optionalIngredient.isPresent()) {
+            Ingredient ingredientToUpdate = optionalIngredient.get();
+            ingredientToUpdate.setAmount(ingredient.getAmount());
+            ingredientRepository.save(ingredientToUpdate);
         }
         return ResponseEntity.ok("Ingredient updated");
     }
