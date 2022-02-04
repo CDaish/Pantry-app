@@ -1,7 +1,7 @@
-package cd.personal.Pantry;
+package cd.personal.pantry;
 
-import cd.personal.Pantry.core.IngredientRepository;
-import cd.personal.Pantry.dm.Ingredient;
+import cd.personal.pantry.ingredient.IngredientRepository;
+import cd.personal.pantry.ingredient.Ingredient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

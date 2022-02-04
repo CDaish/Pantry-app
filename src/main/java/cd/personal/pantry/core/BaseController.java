@@ -1,4 +1,4 @@
-package cd.personal.Pantry.core;
+package cd.personal.pantry.core;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;

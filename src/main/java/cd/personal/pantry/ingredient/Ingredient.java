@@ -1,4 +1,4 @@
-package cd.personal.Pantry.dm;
+package cd.personal.pantry.ingredient;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-public class Unit {
+public class Ingredient {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,14 +17,14 @@ public class Unit {
     private final String name;
     private final String description;
 
-    public Unit() {
-        description = "";
-        name = "";
-    }
-
-    public Unit(String name, String description) {
+    public Ingredient(String name, String description) {
         this.name = name;
         this.description = description;
+    }
+
+    public Ingredient() {
+        description = null;
+        name = "";
     }
 
     public String getName() {
@@ -34,4 +34,14 @@ public class Unit {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
 }

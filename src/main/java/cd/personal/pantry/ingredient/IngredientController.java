@@ -1,6 +1,6 @@
-package cd.personal.Pantry.core;
+package cd.personal.pantry.ingredient;
 
-import cd.personal.Pantry.dm.Ingredient;
+import cd.personal.pantry.core.BaseController;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +10,6 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class IngredientController extends BaseController {
-
-    // standard constructors
 
     private final IngredientRepository ingredientRepository;
 

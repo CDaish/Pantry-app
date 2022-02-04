@@ -1,6 +1,5 @@
-package cd.personal.Pantry.core;
+package cd.personal.pantry.recipe;
 
-import cd.personal.Pantry.dm.Recipe;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

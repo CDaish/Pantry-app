@@ -1,4 +1,4 @@
-package cd.personal.Pantry.dm;
+package cd.personal.pantry.unit;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-public class ShoppingList {
+public class Unit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,6 +17,16 @@ public class ShoppingList {
     private final String name;
     private final String description;
 
+    public Unit() {
+        description = "";
+        name = "";
+    }
+
+    public Unit(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     public String getName() {
         return name;
     }
@@ -24,16 +34,4 @@ public class ShoppingList {
     public String getDescription() {
         return description;
     }
-
-    public ShoppingList() {
-        description = "";
-        name = "";
-    }
-
-    public ShoppingList(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-
 }
