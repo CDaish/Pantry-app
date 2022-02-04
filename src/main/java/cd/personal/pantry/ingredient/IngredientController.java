@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -23,9 +24,19 @@ public class IngredientController extends BaseController {
     }
 
     @PostMapping("/ingredients")
-    public ResponseEntity<String> addIngredient(@Valid @RequestBody Ingredient user) {
-        ingredientRepository.save(user);
+    public ResponseEntity<String> addIngredient(@Valid @RequestBody Ingredient ingredient) {
+        ingredientRepository.save(ingredient);
         return ResponseEntity.ok("Ingredient is valid");
     }
 
+    @PatchMapping("/ingredients")
+    public ResponseEntity<String> updateIngredient(@Valid @RequestBody Ingredient ingredient) {
+        Optional<Ingredient> toUpdate = ingredientRepository.findById(ingredient.getId());
+        if (toUpdate.isPresent()) {
+            Ingredient i = toUpdate.get();
+            i.setAmount(ingredient.getAmount());
+            ingredientRepository.save(i);
+        }
+        return ResponseEntity.ok("Ingredient updated");
+    }
 }

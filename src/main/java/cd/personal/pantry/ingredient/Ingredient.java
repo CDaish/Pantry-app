@@ -7,17 +7,21 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 public class Ingredient {
 
+    public long getId() {
+        return id;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @NotBlank(message = "Name is mandatory")
     private final String name;
-    private final String description;
+    private String description;
     @OneToOne
     private final Unit unitOfMeasurement;
-    private final float amount;
-    private final int recipeId;
+    private float amount;
+    private int recipeId;
 
     public Ingredient(String name, String description, Unit unitOfMeasurement, float amount, int recipeId) {
         this.name = name;
@@ -49,6 +53,18 @@ public class Ingredient {
 
     public int getRecipeId() {
         return recipeId;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setAmount(float amount) {
+        this.amount = amount;
+    }
+
+    public void setRecipeId(int recipeId) {
+        this.recipeId = recipeId;
     }
 
     @Override
