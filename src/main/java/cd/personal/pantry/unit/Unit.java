@@ -16,15 +16,18 @@ public class Unit {
     @NotBlank(message = "Name is mandatory")
     private final String name;
     private final String description;
+    private final String shorthand;
 
     public Unit() {
         description = "";
         name = "";
+        shorthand = "";
     }
 
-    public Unit(String name, String description) {
+    public Unit(String name, String description, String shorthand) {
         this.name = name;
         this.description = description;
+        this.shorthand = shorthand;
     }
 
     public String getName() {
@@ -33,5 +36,9 @@ public class Unit {
 
     public String getDescription() {
         return description;
+    }
+
+    public String getShorthand() {
+        return shorthand;
     }
 }

@@ -1,7 +1,7 @@
-package cd.personal.Pantry;
+package cd.personal.pantry;
 
-import cd.personal.Pantry.core.IngredientController;
-import cd.personal.Pantry.core.IngredientRepository;
+import cd.personal.pantry.ingredient.IngredientController;
+import cd.personal.pantry.ingredient.IngredientRepository;
 import org.hamcrest.core.Is;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 @RunWith(SpringRunner.class)

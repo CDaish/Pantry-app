@@ -12,21 +12,26 @@ import java.util.List;
 public class RecipeController extends BaseController {
 
 
-    private final RecipeRepository recipeRepository;
+    private final RecipeService recipeService;
 
-    public RecipeController(RecipeRepository recipeRepository) {
-        this.recipeRepository = recipeRepository;
+    public RecipeController(RecipeService recipeService) {
+        this.recipeService = recipeService;
     }
 
     @GetMapping("/recipes")
     public List<Recipe> getRecipes() {
-        return (List<Recipe>) recipeRepository.findAll();
+        return (List<Recipe>) recipeService.findAll();
     }
 
     @PostMapping("/recipes")
-    public ResponseEntity<String> addRecipe(@Valid @RequestBody Recipe user) {
-        recipeRepository.save(user);
+    public ResponseEntity<String> addRecipe(@Valid @RequestBody Recipe recipe) {
+        recipeService.save(recipe);
         return ResponseEntity.ok("Ingredient is valid");
+    }
+
+    @GetMapping("/smartrecipes")
+    public List<Recipe> getSmartRecipes() {
+        return (List<Recipe>) recipeService.findAllRecipesWithIngredients();
     }
 
 }

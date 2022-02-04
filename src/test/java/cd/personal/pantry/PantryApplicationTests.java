@@ -1,4 +1,4 @@
-package cd.personal.Pantry;
+package cd.personal.pantry;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -16,15 +16,15 @@ public class PantryApplication {
 		SpringApplication.run(PantryApplication.class, args);
 	}
 
-	@Bean
-	CommandLineRunner init(IngredientRepository ingredientRepository) {
-		return args -> {
-			Stream.of("Spinat", "Möhren", "Keks", "Brezel", "Apfel").forEach(name -> {
-				Ingredient ingredient = new Ingredient(name, name.toLowerCase());
-				ingredientRepository.save(ingredient);
-			});
-			ingredientRepository.findAll().forEach(System.out::println);
-		};
-	}
+//	@Bean
+//	CommandLineRunner init(IngredientRepository ingredientRepository) {
+//		return args -> {
+//			Stream.of("Spinat", "Möhren", "Keks", "Brezel", "Apfel").forEach(name -> {
+//				Ingredient ingredient = new Ingredient(name, name.toLowerCase(), unitOfMeasurement);
+//				ingredientRepository.save(ingredient);
+//			});
+//			ingredientRepository.findAll().forEach(System.out::println);
+//		};
+//	}
 
 }
