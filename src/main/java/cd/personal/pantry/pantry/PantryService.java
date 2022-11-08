@@ -18,8 +18,8 @@ public class PantryService {
     }
 
     private void loadIngredients() {
-        for (Ingredient ingredient:         ingredientRepository.findAll()
-             ) {
+        for (Ingredient ingredient : ingredientRepository.findAll()
+        ) {
             ingredientLookupMap.put(ingredient.getId(), ingredient);
         }
     }
