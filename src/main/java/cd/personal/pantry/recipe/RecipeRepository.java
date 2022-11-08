@@ -10,4 +10,5 @@ import java.util.Collection;
 public interface RecipeRepository extends CrudRepository<Recipe, Long> {
 
     Collection<Recipe> findAllRecipesWithIngredients();
+    Collection<Recipe> findAllRecipesWithIngredientsInStock();
 }
